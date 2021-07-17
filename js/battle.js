@@ -45,16 +45,6 @@ var enemyPokemonPageHealth = document.createElement('p');
 enemyPokemonPageHealth.innerText = enemyPokemon.healthBar;
 document.getElementById('healthEnemy').append(enemyPokemonPageHealth);
 
-
-// Battle health bar
-var userMaxHealth = document.getElementById('userHealthBar');
-var enemyMaxHealth = document.getElementById('enemyHealthBar');
-
-var myHealth = userPokemon.healthbar;
-var theAttack = userPokemon.attack;
-var enemyHealth = enemyPokemon.healthbar;
-var attackHealth = myHealth - theAttack;
-
 //sets health bars to correct place
 if (enemyPokemon.healthBar != 100) {
     var setUserProgress = document.getElementById('healthEnemy');
@@ -68,13 +58,17 @@ if (userPokemon.healthBar != 100) {
     setEnemyProgress.setAttribute('value', setAttackedHealthEnemy);
 }
 
+//Random attack strength 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
 function battleAttacks (){
     
-    enemyPokemon.healthBar = enemyPokemon.healthBar - userPokemon.attack;
+    enemyPokemon.healthBar = enemyPokemon.healthBar - getRandomInt(15);
     //Enemy health bar
     var userProgress = document.getElementById('healthEnemy');
-    var attackedHealth = enemyPokemon.healthBar - userPokemon.attack;
+    var attackedHealth = enemyPokemon.healthBar - getRandomInt(15);
     userProgress.setAttribute('value', attackedHealth);
     
     if (enemyPokemon.healthBar <= 0) {
@@ -82,11 +76,11 @@ function battleAttacks (){
         gameOver();
         removeAttack();
     } else {
-        userPokemon.healthBar = userPokemon.healthBar - enemyPokemon.attack;
+        userPokemon.healthBar = userPokemon.healthBar - getRandomInt(15);
 
         //User health Bar
         var enemyProgress = document.getElementById('healthUser');
-        var attackedHealthEnemy = userPokemon.healthBar - enemyPokemon.attack;
+        var attackedHealthEnemy = userPokemon.healthBar - getRandomInt(15);
         enemyProgress.setAttribute('value', attackedHealthEnemy);
 
         if (userPokemon.healthBar <= 0) {

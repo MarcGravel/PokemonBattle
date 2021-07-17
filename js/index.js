@@ -4,13 +4,10 @@ function addSelection(element) {
     var name = getname.innerText;
     var image = parent.querySelector('img').getAttribute('src');
     var health = parent.querySelector('progress').getAttribute('value');
-    var attack = parent.querySelector('h6').getAttribute('value');
-
     var pokemon = {
     name: name,
     img : image,
     healthBar : health,
-    attack: attack
     }
     Cookies.set('userPokemon', pokemon);
     console.log(pokemon);
@@ -35,12 +32,10 @@ function addEnemy(){
     var name = getname.innerText;
     var image = enemy.querySelector('img').getAttribute('src');
     var health = enemy.querySelector('progress').getAttribute('value');
-    var attack = enemy.querySelector('h6').getAttribute('value');
     var enemyPokemon = {
         name: name,
         img: image,
         healthBar: health,
-        attack: attack
     }
     Cookies.set('enemyPokemon', enemyPokemon);
     console.log(enemyPokemon);
