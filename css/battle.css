@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    background-color: black;
+}
+
+#noSelection {
+    display: none;
+    justify-self: center;
+    align-self: center;
+    background-color: black;
+}
+
+#noSelection h1 {
+    font-size: 2.5em;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#noSelection button {
+    width: 20vw;
+    height: 8vh;
+    font-weight: bold;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+#battlefield {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#userPokemon {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#enemyPokemon {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#userHealthBar, #enemyHealthBar {
+    width: 200px;
+    height: 10px;
+    background-color: green;
+    border: 2px solid black;
+    position: relative;
+    display: inline-block;
+}
+
+#attack, #counter {
+    padding: 5px 10px;
+}
+
+#playAgainBtn {
+    display: none;
+    margin-bottom: 5vh;
+    padding: 3vh 3vw 3vh 3vw;
+    background-color: tomato;
+}
+
+img {
+    width: 20vh;
+    height: 100%;
+    object-fit: cover;
+}
