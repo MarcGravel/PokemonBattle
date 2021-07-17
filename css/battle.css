@@ -58,7 +58,7 @@ body {
     display: inline-block;
 }
 
-#attack, #counter {
+#attack {
     padding: 5px 10px;
 }
 

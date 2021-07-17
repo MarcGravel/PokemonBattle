@@ -16,13 +16,11 @@
     </div>
     <div id="battlefield">
         <div id="userPokemon">
-            <div id="userHealthBar"></div>
-            <p id="userHealth">Health: </p>
+            <progress id="healthUser" value="100" max="100"></progress>
             <button id="attack" onclick="battleAttacks()">Attack</button>
         </div>
         <div id="enemyPokemon">
-            <div id="enemyHealthBar"></div>
-            <p id="enemyHealth">Health: </p>
+            <progress id="healthEnemy" value="100" max="100"></progress>
         </div>
         <div id="gameOver">
             <button id="playAgainBtn" onclick="redirect()">Play Again</button>

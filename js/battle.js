@@ -33,7 +33,7 @@ document.getElementById('userPokemon').append(userPokemonPageImage);
 
 var userPokemonPageHealth = document.createElement('p');
 userPokemonPageHealth.innerText = userPokemon.healthBar;
-document.getElementById('userHealth').append(userPokemonPageHealth);
+document.getElementById('healthUser').append(userPokemonPageHealth);
 
 //Enemy
 var enemyPokemonPageImage = document.createElement('img');
@@ -42,7 +42,7 @@ document.getElementById('enemyPokemon').append(enemyPokemonPageImage);
 
 var enemyPokemonPageHealth = document.createElement('p');
 enemyPokemonPageHealth.innerText = enemyPokemon.healthBar;
-document.getElementById('enemyHealth').append(enemyPokemonPageHealth);
+document.getElementById('healthEnemy').append(enemyPokemonPageHealth);
 
 
 // Battle health bar
@@ -54,9 +54,27 @@ var theAttack = userPokemon.attack;
 var enemyHealth = enemyPokemon.healthbar;
 var attackHealth = myHealth - theAttack;
 
+//sets health bars to correct place
+if (enemyPokemon.healthBar != 100) {
+    var setUserProgress = document.getElementById('healthEnemy');
+    var setAttackedHealth = enemyPokemon.healthBar;
+    setUserProgress.setAttribute('value', setAttackedHealth);
+}
+
+if (userPokemon.healthBar != 100) {
+    var setEnemyProgress = document.getElementById('healthUser');
+    var setAttackedHealthEnemy = userPokemon.healthBar;
+    setEnemyProgress.setAttribute('value', setAttackedHealthEnemy);
+}
+
+
 function battleAttacks (){
     
     enemyPokemon.healthBar = enemyPokemon.healthBar - userPokemon.attack;
+    //Enemy health bar
+    var userProgress = document.getElementById('healthEnemy');
+    var attackedHealth = enemyPokemon.healthBar - userPokemon.attack;
+    userProgress.setAttribute('value', attackedHealth);
     
     if (enemyPokemon.healthBar <= 0) {
         winner("You are");
@@ -64,6 +82,11 @@ function battleAttacks (){
         removeAttack();
     } else {
         userPokemon.healthBar = userPokemon.healthBar - enemyPokemon.attack;
+
+        //User health Bar
+        var enemyProgress = document.getElementById('healthUser');
+        var attackedHealthEnemy = userPokemon.healthBar - enemyPokemon.attack;
+        enemyProgress.setAttribute('value', attackedHealthEnemy);
 
         if (userPokemon.healthBar <= 0) {
             winner("The enemy is");
