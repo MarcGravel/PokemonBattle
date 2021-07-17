@@ -27,6 +27,7 @@ var randomNumber = getRandomInt(3);
 var allCharacters = document.getElementsByClassName('character');
 var enemyChoice = allCharacters[randomNumber];
     console.log(enemyChoice);
+    
 
 function addEnemy(){
     var enemy = enemyChoice;

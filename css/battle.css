@@ -67,6 +67,7 @@ body {
     margin-bottom: 5vh;
     padding: 3vh 3vw 3vh 3vw;
     background-color: tomato;
+    border-radius: 30px;
 }
 
 img {

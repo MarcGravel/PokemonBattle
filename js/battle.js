@@ -29,6 +29,7 @@ var enemyPokemon = JSON.parse(enemyPokemonCookie);
 //User
 var userPokemonPageImage = document.createElement('img');
 userPokemonPageImage.setAttribute('src', userPokemon.img);
+userPokemonPageImage.setAttribute('id', 'userImg');
 document.getElementById('userPokemon').append(userPokemonPageImage);
 
 var userPokemonPageHealth = document.createElement('p');
@@ -117,7 +118,7 @@ function gameOver() {
 
 //Winner function 
 function winner(winner) {
-    var displayWinner = document.createElement('h3');
+    var displayWinner = document.createElement('h2');
     displayWinner.style.color = 'white';
     displayWinner.innerText = winner + " the champion!";
     document.getElementById('gameOver').append(displayWinner);
